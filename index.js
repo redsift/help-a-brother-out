@@ -7,7 +7,7 @@ let id = null;
 
 function transform(t) {
 
-    return t;
+    return t.trim().replace(/\n/g, '<br/>');
 }
 
 function done() {
@@ -61,4 +61,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     next();
     select('#done').on('click', done);
+    select('#skip').on('click', next);
 });

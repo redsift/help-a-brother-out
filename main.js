@@ -1,10 +1,13 @@
+'use strict'
+
 var ArgumentParser = require('argparse').ArgumentParser;
-var package = require('./package.json');
+var pck = require('./package.json');
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var parser = new ArgumentParser({
-  version: package.version,
+  version: pck.version,
   addHelp: true,
   description: 'Help A Brother Out'
 });
@@ -34,10 +37,6 @@ parser.addArgument(
   }    
 );
 
-function next() {
-    return { id: '123', text: 'Blah' };
-}
-
 function classify(id, classification) {
     if (id == null) throw new Error('no-id');
 
@@ -47,6 +46,21 @@ function classify(id, classification) {
 }
 
 var args = parser.parseArgs();
+
+let data = null;
+
+fs.readdir(args.data, function(err, items) {
+    if (err) throw new Error(err);
+    console.log(items.length, 'files');
+    
+    data = items;
+});
+
+function next() {
+    let id = data[Math.floor(Math.random() * data.length)];
+    var obj = JSON.parse(fs.readFileSync(`${args.data}/${id}`, 'utf8'));
+    return { id: id, text: obj.textBody };
+}
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
