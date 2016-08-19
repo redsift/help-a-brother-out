@@ -1,0 +1,12 @@
+
+node_modules/
+
+distribution/
+
+npm-debug.log
+
+assets/
+
+*.icc
+
+static/

@@ -1,0 +1,78 @@
+{
+  "name": "@redsift/help-a-brother-out",
+  "version": "0.0.2",
+  "description": "Human classifier.",
+  "keywords": [
+    "ml",
+    "classify",
+    "redsift",
+    "tool"
+  ],
+  "homepage": "https://github.com/redsift/help-a-brother-out",
+  "license": "MIT",
+  "author": {
+    "name": "Rahul Powar",
+    "url": "https://medium.com/@rahulpowar"
+  },
+  "main": "distribution/help-a-brother-out.umd-es2015.js",
+  "browser": "distribution/help-a-brother-out.umd-es2015.min.js",
+  "jsnext:main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redsift/help-a-brother-out.git"
+  },
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp build",
+    "pretest": "npm outdated && npm run build",
+    "lint-gulp": "eslint -c .eslintrc-gulp gulpfile.js",
+    "lint": "eslint index.js src",
+    "test": "tape 'test/**/*-test.js' && npm run lint",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@redsift/ui-rs-core": "~0.3.4",
+    "argparse": "^1.0.7",
+    "body-parser": "^1.15.2",
+    "d3-request": "^1.0.2",
+    "d3-selection": "^1.0.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "@redsift/tape-reel": "~0.1.0",
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.1",
+    "eslint": "^3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-data": "^1.2.1",
+    "gulp-expect-file": "0.0.7",
+    "gulp-htmllint": "^0.0.9",
+    "gulp-if": "^2.0.1",
+    "gulp-jsonlint": "^1.1.2",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "merge-stream": "^1.0.0",
+    "postcss-base64": "^0.4.1",
+    "postcss-inline-base64": "^2.0.0",
+    "postcss-map-url": "^1.0.2",
+    "rollup": "^0.34.1",
+    "rollup-plugin-buble": "^0.12.1",
+    "rollup-plugin-commonjs": "^3.3.0",
+    "rollup-plugin-json": "^2.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-string": "^2.0.2",
+    "rollup-stream": "^1.11.0",
+    "run-sequence": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-s3": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
