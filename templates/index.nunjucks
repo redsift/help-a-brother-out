@@ -19,7 +19,7 @@
     <blockquote id="text">...</blockquote>
     <div id="classify">
     </div>
-    <button id="skip">Skip</button>
     <button id="done">Done</button>
+    <button id="skip">Data Issue</button>
 </body>
 </html>

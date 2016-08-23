@@ -31,12 +31,15 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@redsift/ui-rs-core": "~0.3.4",
+    "@redsift/ui-rs-core": "~0.4.0",
     "argparse": "^1.0.7",
     "body-parser": "^1.15.2",
+    "cookies": "^0.6.1",
     "d3-request": "^1.0.2",
     "d3-selection": "^1.0.0",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "fs-extra": "^0.30.0",
+    "shortid": "^2.2.6"
   },
   "devDependencies": {
     "@redsift/tape-reel": "~0.1.0",
